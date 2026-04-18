@@ -1,6 +1,7 @@
 import { Resend } from "resend";
 import type { IEmailService } from "../../domain/services/email-service.interface";
 import { env } from "../config/env";
+import { welcomeEmailTemplate } from "./templates/welcome.template";
 
 export class EmailService implements IEmailService {
     private readonly resendInstance: Resend;
@@ -13,8 +14,8 @@ export class EmailService implements IEmailService {
         const { error } = await this.resendInstance.emails.send({
             from: env.FROM_EMAIL,
             to: targetEmail,
-            subject: "Welcome to our newsletter",
-            html: "<h1>Welcome to our newsletter</h1>"
+            subject: "Selamat Bergabung di Nomenklatur",
+            html: welcomeEmailTemplate()
         })
 
         if (error) throw new Error(`Failed to send welcome email: ${error.message}`);
