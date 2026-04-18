@@ -1,4 +1,4 @@
-import { InvalidEmailError } from "./domain_error";
+import { InvalidEmailError } from "../errors/domain_error";
 
 export class Subscriber {
     private constructor(
