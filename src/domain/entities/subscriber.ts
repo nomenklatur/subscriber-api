@@ -2,7 +2,7 @@ import { InvalidEmailError } from "../errors/domain_error";
 
 export class Subscriber {
     private constructor(
-        public readonly id: string | null,
+        public readonly id: number | null,
         public readonly email: string,
         public readonly createdAt: Date | null
     ) { }
@@ -17,7 +17,7 @@ export class Subscriber {
         return new Subscriber(null, normalizedEmail, null);
     }
 
-    static fromPersistence(id: string, email: string, createdAt: Date): Subscriber {
+    static fromPersistence(id: number, email: string, createdAt: Date): Subscriber {
         return new Subscriber(id, email, createdAt);
     }
 
