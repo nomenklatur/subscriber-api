@@ -5,7 +5,7 @@ import { subscribeRequest } from "../requests/subscriber/subscriber.request";
 export class SubscriberController {
     constructor(private readonly subscribeUserUseCase: SubscriberUserUseCase) { }
 
-    async subscribe(req: Request, res: Response) {
+    subscribe = async (req: Request, res: Response) => {
         const validatedPayload = subscribeRequest.parse(req.body);
         try {
             const result = await this.subscribeUserUseCase.execute(validatedPayload);
