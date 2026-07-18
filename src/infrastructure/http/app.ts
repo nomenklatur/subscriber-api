@@ -1,8 +1,10 @@
 import express from 'express';
+import cors from 'cors';
 import { createContainer } from '../container';
 
 export function createApp() {
     const app = express();
+    app.use(cors());
     app.use(express.json());
 
     const serviceContainer = createContainer();
