@@ -14,6 +14,7 @@ export function createApp() {
     });
 
     app.post('/api/v1/subscribe', serviceContainer.subscriberController.subscribe);
+    app.post('/api/v1/issues', serviceContainer.issueController.create);
 
     return app;
 }
