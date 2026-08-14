@@ -5,6 +5,7 @@ const envSchema = z.object({
     RESEND_API_KEY: z.string().min(1),
     FROM_EMAIL: z.string().email(),
     PORT: z.string().optional().default('3000'),
+    DATABASE_SCHEMA: z.string().optional().default('subscribers'),
 })
 
 export const env = envSchema.parse(process.env);
