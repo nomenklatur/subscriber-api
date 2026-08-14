@@ -29,4 +29,4 @@ This application is configured to be deployed on Vercel using the Bun runtime.
     - **GitHub Integration**: Push your code to a GitHub repository and connect it to Vercel. Vercel will automatically detect the configuration and deploy using Bun.
     - **Vercel CLI**: Run `vercel` in your terminal to deploy directly.
 
-The `vercel.json` file ensures that the Bun runtime is used, and `index.ts` exports the Express application for Vercel's serverless functions.
+The `vercel.json` file ensures that the Bun runtime is used with `"buildCommand": "bun run build"` (which executes `bun run migrate:up` to automatically apply Drizzle database migrations during deployment), and `index.ts` exports the Express application for Vercel's serverless functions.
