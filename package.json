@@ -22,7 +22,7 @@
     "zod": "^4.3.6"
   },
   "scripts": {
-    "build": "bun run migrate:up",
+    "build": "bun x tsc --noEmit && bun run migrate:up",
     "migrate": "drizzle-kit generate",
     "migrate:up": "drizzle-kit migrate"
   }
