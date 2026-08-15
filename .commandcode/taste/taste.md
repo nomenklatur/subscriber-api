@@ -1,3 +1,4 @@
 - Uses Vercel for hosting and deploying apps/APIs. Confidence: 0.85
 - Uses Bun as the runtime/package manager (bunVersion in vercel.json, `bun run` scripts). Confidence: 0.8
 - Uses Drizzle ORM with drizzle-kit migrations. Confidence: 0.7
+- Wants database migrations to run automatically on every deployment (not as a manual step). Confidence: 0.8

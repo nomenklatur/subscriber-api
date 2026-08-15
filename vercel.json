@@ -1,6 +1,8 @@
 {
   "bunVersion": "1.x",
+  "framework": null,
   "buildCommand": "bun run migrate:up",
+  "outputDirectory": "public",
   "rewrites": [
     {
       "source": "/api/(.*)",
