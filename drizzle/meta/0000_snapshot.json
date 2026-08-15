@@ -1,12 +1,70 @@
 {
-  "id": "673c7c72-64dd-4b71-b0fe-1576509ed343",
+  "id": "aaf1dadd-5e0e-41bb-8bc9-c613c86a7cbc",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
-    "public.subscribers": {
+    "subscribers.issues": {
+      "name": "issues",
+      "schema": "subscribers",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "type": {
+          "name": "type",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "platform": {
+          "name": "platform",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "message": {
+          "name": "message",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "email": {
+          "name": "email",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "subscribers.subscribers": {
       "name": "subscribers",
-      "schema": "",
+      "schema": "subscribers",
       "columns": {
         "id": {
           "name": "id",
@@ -46,7 +104,9 @@
     }
   },
   "enums": {},
-  "schemas": {},
+  "schemas": {
+    "subscribers": "subscribers"
+  },
   "sequences": {},
   "roles": {},
   "policies": {},

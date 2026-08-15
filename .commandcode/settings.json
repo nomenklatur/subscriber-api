@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Shell(ls:*)",
+      "Shell(cat:*)",
+      "Shell(sed:*)",
+      "Shell(rm:*)",
+      "Shell(bun:*)",
+      "Shell(cat .gitignore 2>/dev/null; echo \"---\"; ls -la | grep -i env)",
+      "Shell(git:*)"
+    ],
+    "deny": [],
+    "defaultMode": "default"
+  }
+}
